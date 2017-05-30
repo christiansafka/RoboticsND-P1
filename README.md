@@ -62,6 +62,7 @@ And into rover-centric coordinates, with the mean angle drawn
  The first change was to again add the rgb_thresh_max to the color_thresh function.  In my perception_step function, I set the Rover.vision_image red channel to rock_sample color threshhold output, green channel for walls, and blue channel for navigable terrain. I then converted all three of the threshholded outputs into rover-centric coordinates.  The navigable terrain and wall coordinates were transformed to world coordinates, and applied as follows:
  
  Blue channel of worldmap receives += 255 for all navigable terrain and -= 255 for walls
+
  Red channel of worldmap receives += 255 for all walls and -= 255 for navigable terrain
  
  I found that this method gave me the highest fidelity.  As for the rover-centric rock sample coordinates, they were used to check if there is a sample in the image, and determine the angle the rover needs to turn to get to that sample.  If a sample was in sight, the rovers mode was set to 'rock_visible', a custom mode I handle in the decision_step.  Further, if no rock sample is present, the navigable terrain rover-centric coordinates are converted to polar coordinates, and set to the rovers nav_dists and nav_angles variables.
