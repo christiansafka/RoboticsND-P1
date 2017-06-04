@@ -1,5 +1,6 @@
 ## Project: Search and Sample Return
 
+#### Medium Article:  https://medium.com/@christiansafka/udacity-robotics-nanodegree-project-1-search-and-sample-return-5bdd2d82788f
 ---
 
 
